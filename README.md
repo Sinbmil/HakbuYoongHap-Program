@@ -94,6 +94,7 @@
 <p align="center">
  <img src="https://user-images.githubusercontent.com/83913056/170949045-091f4542-4924-41fc-b2d2-07764ce68b38.png">
 </p>
+
 * 의류 추천 위해 웹 크롤링 시행. 이를 통해 얻은 의류 정보는 주기적으로 엑셀로 변환 및 DB에 저장
 * 위 이미지는 엑셀로 변환된 의류 정보에 해당<br><br>
 
