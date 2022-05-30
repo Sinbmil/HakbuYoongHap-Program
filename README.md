@@ -12,7 +12,10 @@
 
 # 2) 시스템 설계
 ## 1. 시스템 구조
-![image](https://user-images.githubusercontent.com/83913056/170935275-108ee07f-1c97-4335-9569-4c1ab12a82eb.png)
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/83913056/170935275-108ee07f-1c97-4335-9569-4c1ab12a82eb.png">
+</p>
+
 * 개발 시스템은 ‘시스템 구조’와 같이 [의류 정보 저장 모듈/피부톤 적합 색상 매칭 모듈/의류 추천 모듈/데이터베이스]로 구분
 ### [1] 의류 정보 저장 모듈
 * 외부 System Actor에서 제공하는 의류 정보를 개발 시스템에 등록
@@ -25,7 +28,10 @@
 * [사용자 정보/사이즈 정보/피부톤 정보/의류 정보] 저장
 
 ## 2. 유스케이스 다이어그램
-![image](https://user-images.githubusercontent.com/83913056/170938345-22efc10a-617b-478c-9be9-20b48747a4f7.png)
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/83913056/170938345-22efc10a-617b-478c-9be9-20b48747a4f7.png">
+</p>
+
 ### [1] Actor
 * [비회원/회원/관리자/쇼핑몰 시스템]으로 구분
 ### [2] Usecase
@@ -38,7 +44,10 @@
 * 쇼핑몰 시스템과 회원은 의류 추천 Usecase를 통해 연결
 
 ## 3. E-R 다이어그램
-![image](https://user-images.githubusercontent.com/83913056/170939303-ae6dd4ee-ccec-4bac-9fed-d10673e1306f.png)
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/83913056/170939303-ae6dd4ee-ccec-4bac-9fed-d10673e1306f.png">
+</p>
+
 ### [1] 사용자 정보(User Information) 테이블
 * 사용자 이름, 닉네임, 이메일, 연락처, 성별 및 사이즈 정보 저장
 * 피부톤 분류로 도출된 사용자 사이즈 및 사용자 피부톤 저장
@@ -52,11 +61,16 @@
 
 # 3) 시스템 구현
 ## 1. 개발 환경
-![image](https://user-images.githubusercontent.com/83913056/170942888-82788db3-e569-4846-a65f-9247434f6aac.png)
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/83913056/170942888-82788db3-e569-4846-a65f-9247434f6aac.png">
+</p>
 
 ## 2. 주요 기능 구현
 ### [1] 사이즈 입력
-![image](https://user-images.githubusercontent.com/83913056/170944485-91a7e7b5-f729-4a45-b2d8-3a9d78d9b65c.png)
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/83913056/170944485-91a7e7b5-f729-4a45-b2d8-3a9d78d9b65c.png">
+</p>
+
 * 회원가입 및 개인 정보 수정 시 사용자의 사이즈 선택 및 변경 가능
 * 선택된 사용자 사이즈가 추천 서비스 반영됨
 * 대한민국 남성 가슴 둘레를 기준으로 사이즈를 구분하였음
@@ -64,7 +78,10 @@
 * S은 90 ~ 95인치, L은 100 ~ 105인치, XL은 105 ~ 110인치, XXL은 100인치 이상에 해당
 
 ### [2] 피부톤 선택
-![image](https://user-images.githubusercontent.com/83913056/170944893-11bd3097-bb09-486d-a212-485c0eac8706.png)
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/83913056/170944893-11bd3097-bb09-486d-a212-485c0eac8706.png">
+</p>
+
 * 회원가입 및 개인 정보 수정 시 사용자의 피부톤 선택 및 변경 가능
 * 피부톤은 기본적으로 웜톤과 쿨톤으로 구분됨
 * 웜톤 피부는 따뜻한 느낌의 피부색 / 쿨톤 피부는 차갑고 창백한 느낌이 있는 피부색
@@ -74,9 +91,12 @@
 
 ### [3] 의류 추천
 * 회원 정보와 의류 정보 수집을 통해 사용자별 사이즈와 피부톤이 데이터베이스에 저장되어 있음<br><br>
-![image](https://user-images.githubusercontent.com/83913056/170949045-091f4542-4924-41fc-b2d2-07764ce68b38.png)
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/83913056/170949045-091f4542-4924-41fc-b2d2-07764ce68b38.png">
+</p>
 * 의류 추천 위해 웹 크롤링 시행. 이를 통해 얻은 의류 정보는 주기적으로 엑셀로 변환 및 DB에 저장
 * 위 이미지는 엑셀로 변환된 의류 정보에 해당<br><br>
+
 ```python
 def getColorName(R,G,B): 
     minimum = 10000
@@ -88,7 +108,10 @@ def getColorName(R,G,B):
     return cname
 ```
 * 크롤링된 의류 이미지는 위 이미지처럼 색상 도출 AI 프로그램에 대입하여 이미지에서 도출되는 2가지 색상을 얻음<br><br>
-![image](https://user-images.githubusercontent.com/83913056/170965912-a78f3b61-a685-45d9-b806-0f6d4cf12746.png)
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/83913056/170965912-a78f3b61-a685-45d9-b806-0f6d4cf12746.png">
+</p>
+
 * 참고로 색상은 138개로 구분되며, 색상에 대한 정보는 별도의 엑셀 파일에 저장되어 있음 
 
 ### * 색상 선정 및 최종 의류 추천 과정
@@ -107,6 +130,8 @@ for i in range(len(color_list)) :
             f.write(color_list[i] + ',' + 'ws' + ',' + '' + ',' + '' + ',' + ''+ '\n')
 ```
 * 위 이미지와 같이 DB에 저장된 의류 색상이 피부톤 종류 중 무엇에 적합한가를 매칭시켜 해당 색상에 어울리는 피부톤 종류의 결과를 DB에 저장<br><br>
-![image](https://user-images.githubusercontent.com/83913056/170969169-93061fa7-425a-4c9d-ab13-befd7a0d811e.png)
-* 위  같이 사용자의 사이즈와 피부톤을 DB에 저장되어 있는 각 의류의 사이즈와 의류 색상에 적합한 피부톤과 비교하여 일치한 것이 있다면 이를 사용자에게 추천
+<p align="center"> 
+ <img src="https://user-images.githubusercontent.com/83913056/170969169-93061fa7-425a-4c9d-ab13-befd7a0d811e.png">
+</p>
 
+* 위와 같이 사용자의 사이즈와 피부톤을 DB에 저장되어 있는 각 의류의 사이즈와 의류 색상에 적합한 피부톤과 비교하여 일치한 것이 있다면 이를 사용자에게 추천
