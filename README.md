@@ -136,3 +136,6 @@ for i in range(len(color_list)) :
 </p>
 
 * 위와 같이 사용자의 사이즈와 피부톤을 DB에 저장되어 있는 각 의류의 사이즈와 의류 색상에 적합한 피부톤과 비교하여 일치한 것이 있다면 이를 사용자에게 추천
+
+### * 시연 영상 및 기타 정보는 Wiki에서 확인 바랍니다.
+-> https://github.com/Sinbmil/ClothingRecommendationSystem.wiki.git
