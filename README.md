@@ -12,7 +12,7 @@ SizeLab은 AI를 활용한 체형 및 피부색별 적합 의류 추천 시스�
 <hr/>
 
 # 2) 시스템 설계
-## 1. 시스템 구조
+## 1. System Structure
 <p align="center">
  <img src="https://user-images.githubusercontent.com/83913056/170935275-108ee07f-1c97-4335-9569-4c1ab12a82eb.png">
 </p>
@@ -21,14 +21,14 @@ SizeLab은 AI를 활용한 체형 및 피부색별 적합 의류 추천 시스�
 ### [1] 의류 정보 저장 모듈(Clothing Information Storage Module)
 * 외부 System Actor에서 제공하는 의류 정보를 개발 시스템에 등록
 * 등록된 의류를 수정 및 삭제
-### [2] 피부톤 적합 색상 매칭 모듈(Color Check Module Suutable for Skin Tone)
+### [2] 피부톤 적합 색상 매칭 모듈(Color Check Module Sutable for Skin Tone)
 * 피부톤(봄 웜톤, 여름 쿨톤, 가을 웜톤, 겨울 쿨톤)에 적합한 의류 색상 매칭
 ### [3] 의류 추천 모듈(Clothing Recommendation Module)
 * 사용자가 입력한 사이즈 정보 및 피부 톤을 고려 > 등록 의류 정보 중 사용자와 관련된 의류 추천
 ### [4] 데이터베이스 
 * [사용자 정보/사이즈 정보/피부톤 정보/의류 정보] 저장
 
-## 2. 유스케이스 다이어그램
+## 2. Usecase Diagram
 <p align="center">
  <img src="https://user-images.githubusercontent.com/83913056/170938345-22efc10a-617b-478c-9be9-20b48747a4f7.png">
 </p>
@@ -44,7 +44,7 @@ SizeLab은 AI를 활용한 체형 및 피부색별 적합 의류 추천 시스�
 * 회원과 관리자는 사용자 인증 Usecase를 통해 연결
 * 쇼핑몰 시스템과 회원은 의류 추천 Usecase를 통해 연결
 
-## 3. E-R 다이어그램
+## 3. E-R Diagram
 <p align="center">
  <img src="https://user-images.githubusercontent.com/83913056/170939303-ae6dd4ee-ccec-4bac-9fed-d10673e1306f.png">
 </p>
@@ -116,7 +116,7 @@ def getColorName(R,G,B):
 
 * 참고로 색상은 138개로 구분되며, 색상에 대한 정보는 별도의 엑셀 파일에 저장되어 있음 
 
-### * 색상 선정 및 최종 의류 추천 과정
+### * 의류 추천 원리
 * 색상 도출 AI 프로그램을 통해 가장 높게 나온 의류 이미지 내 2가지 색상 중 1개를 관리자 최종 선정
 * 그 이유는 가장 높게 나온 2가지의 색상은 배경 색상 및 류의 색상에 해당되기 때문
 * 의류 이미지마다 배경 색상의 비율이 더 높을 수 있고, 의류의 색상의 비율이 더 높을 수 있음
